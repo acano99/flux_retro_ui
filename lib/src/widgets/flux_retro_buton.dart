@@ -81,6 +81,7 @@ class _FluxRetroButonState extends State<FluxRetroButon> {
                   child: Image.asset(
                     'assets/noise_texture.png',
                     repeat: ImageRepeat.repeat,
+                    package: 'flux_retro_ui',
                   ),
                 ),
               ),
@@ -129,6 +130,7 @@ class _FluxRetroButonState extends State<FluxRetroButon> {
                           letterSpacing: 2,
                           fontSize: widget.fontSize,
                           fontFamily: 'RetroTitle',
+                          package: 'flux_retro_ui',
                         ),
                       ),
                     ),
