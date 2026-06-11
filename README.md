@@ -1,39 +1,36 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 🕹️ Flux Retro UI
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+Paquete de interfaz de usuario para Flutter que implementa un sistema de diseño con estética retro analógica. Utiliza `ThemeExtensions` para un soporte nativo de Modo Claro y Oscuro.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## 🚀 Características
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- **Estética Retro**: Efectos de textura de ruido y brillos analógicos.
+- **Sistema de Temas**: Basado en `ThemeExtensions` para un acceso tipado y reactivo.
+- **Componentes**: Colección de widgets (botones, tarjetas, inputs) con identidad visual coherente.
 
-## Features
+## 📂 Estructura del Paquete
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- `assets/`: Recursos visuales y texturas base.
+- `lib/src/theme/`: Definición de colores, tokens y extensiones del sistema.
+- `lib/src/widgets/`: Catálogo de componentes visuales listos para usar.
 
-## Getting started
+## 🛠️ Integración
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Configura las extensiones en tu `MaterialApp`:
 
 ```dart
-const like = 'sample';
+MaterialApp(
+  themeMode: ThemeMode.system,
+  theme: ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.light,
+    extensions: [FluxRetroTheme.defaultLight()],
+  ),
+  darkTheme: ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.dark,
+    extensions: [FluxRetroTheme.defaultDark()],
+  ),
+  home: const MyRetroScreen(),
+);
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
