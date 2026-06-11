@@ -25,10 +25,10 @@ class FluxRetroSliverAppbar extends StatelessWidget {
               child: Opacity(
                 opacity: 0.05,
                 child: Image.asset(
-                  'assets/noise_texture.png',
+                  'assets/ic_noise_texture.png',
+                  package: 'flux_retro_ui',
                   repeat: ImageRepeat.repeat,
                   fit: BoxFit.none,
-                  package: 'flux_retro_ui',
                 ),
               ),
             ),
