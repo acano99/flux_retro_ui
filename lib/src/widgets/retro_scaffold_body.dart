@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flux_retro_ui/flux_retro_ui.dart';
 
 class RetroScaffoldBody extends StatelessWidget {
   const RetroScaffoldBody({super.key, required this.child, this.sliverAppBar});
@@ -8,11 +9,13 @@ class RetroScaffoldBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final retroTheme = context.fluxRetro;
+
     return Stack(
       children: [
         Positioned.fill(
           child: Opacity(
-            opacity: 0.05,
+            opacity: retroTheme.noiseOpacity,
             child: Image.asset(
               'assets/ic_noise_texture.png',
               package: 'flux_retro_ui',
@@ -29,7 +32,7 @@ class RetroScaffoldBody extends StatelessWidget {
                 center: Alignment.center,
                 radius: 1.2,
                 colors: [
-                  Colors.white.withValues(alpha: 0.03),
+                  retroTheme.glareColor.withValues(alpha: 0.03),
                   Colors.transparent,
                 ],
               ),
